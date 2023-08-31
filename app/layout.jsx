@@ -10,11 +10,11 @@ export default function RootLayout({ children }) {
       */}
       <head />
       <body>
-        <nav>
-          <Link href='/resume'>Resume</Link>
-          <Link href='/ecommerce'>E-Commerce</Link>
-          <Link href='/smallbiz'>Small Biz</Link>
-          <Link href='/backgammon'>Backgammon</Link>
+        <nav className='mainNav'>
+          <Link className='navLink' href='/resume'>Resume</Link>
+          <Link className='navLink' href='/ecommerce'>E-Commerce</Link>
+          <Link className='navLink' href='/smallbiz'>Small Biz</Link>
+          <Link className='navLink' href='/backgammon'>Backgammon</Link>
         </nav>
         {children}
       </body>

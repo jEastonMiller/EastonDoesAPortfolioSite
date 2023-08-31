@@ -5,6 +5,10 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  background-color: hsla(222, 14%, 33%, 0.1);
+  background-image: url("../public/background_texture.png");
+  font-family: helvetica;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,3 +30,6 @@
     transform: rotate(0deg);
   }
 }
+
+
+

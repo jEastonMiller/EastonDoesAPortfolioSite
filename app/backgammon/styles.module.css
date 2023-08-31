@@ -30,6 +30,13 @@
   border: 2px rgba(0, 0, 0, 1.0) solid;
 }
 
+.checker {
+  height: 10vh;
+  width: 10vh;
+  border-radius: 2.5vh;
+  border: 1px solid rgba(0, 0, 0, 1.0);
+}
+
 /* .triangle {
   background-color: blue;
 }  */

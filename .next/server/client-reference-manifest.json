@@ -40,25 +40,9 @@
         "async": false
       }
     },
-    "(app-client)/./app/backgammon/styles.module.css": {
-      "*": {
-        "id": "(sc_client)/./app/backgammon/styles.module.css",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
     "(app-client)/./node_modules/next/dist/client/link.js": {
       "*": {
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
-    "(app-client)/./app/backgammon/components/board.jsx": {
-      "*": {
-        "id": "(sc_client)/./app/backgammon/components/board.jsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -147,14 +131,6 @@
       ],
       "async": false
     },
-    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/backgammon/styles.module.css": {
-      "id": "(app-client)/./app/backgammon/styles.module.css",
-      "name": "*",
-      "chunks": [
-        "app/backgammon/layout:static/chunks/app/backgammon/layout.js"
-      ],
-      "async": false
-    },
     "/Users/easton/Projects/EastonDoesAPortfolioSite/node_modules/next/dist/client/link.js": {
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
@@ -171,11 +147,11 @@
       ],
       "async": false
     },
-    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/backgammon/components/board.jsx": {
-      "id": "(app-client)/./app/backgammon/components/board.jsx",
+    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/resume/styles.module.css": {
+      "id": "(app-client)/./app/resume/styles.module.css",
       "name": "*",
       "chunks": [
-        "app/backgammon/page:static/chunks/app/backgammon/page.js"
+        "app/resume/layout:static/chunks/app/resume/layout.js"
       ],
       "async": false
     },
@@ -189,13 +165,11 @@
     }
   },
   "entryCSSFiles": {
-    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/backgammon/layout": [
-      "static/css/app/backgammon/layout.css"
+    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/resume/page": [],
+    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/resume/layout": [
+      "static/css/app/resume/layout.css"
     ],
-    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/backgammon/loading": [],
-    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/backgammon/page": [
-      "static/css/app/backgammon/page.css"
-    ],
+    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/resume/loading": [],
     "/Users/easton/Projects/EastonDoesAPortfolioSite/app/layout": [
       "static/css/app/layout.css"
     ]

@@ -1,21 +1,20 @@
 {
   "pages": {
-    "/backgammon/layout": [
+    "/resume/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/backgammon/layout.css",
-      "static/chunks/app/backgammon/layout.js"
+      "static/chunks/app/resume/page.js"
     ],
-    "/backgammon/loading": [
+    "/resume/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/backgammon/loading.js"
+      "static/css/app/resume/layout.css",
+      "static/chunks/app/resume/layout.js"
     ],
-    "/backgammon/page": [
+    "/resume/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/backgammon/page.css",
-      "static/chunks/app/backgammon/page.js"
+      "static/chunks/app/resume/loading.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
