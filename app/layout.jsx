@@ -1,5 +1,7 @@
 import './globals.css'
 import Link from 'next/link'
+import Image from 'next/image'
+import Styling from './components/styling'
 
 export default function RootLayout({ children }) {
   return (
@@ -11,10 +13,14 @@ export default function RootLayout({ children }) {
       <head />
       <body>
         <nav className='mainNav'>
-          <Link className='navLink' href='/resume'>Resume</Link>
-          <Link className='navLink' href='/ecommerce'>E-Commerce</Link>
-          <Link className='navLink' href='/smallbiz'>Small Biz</Link>
-          <Link className='navLink' href='/backgammon'>Backgammon</Link>
+          <div className='navLink'>
+            <Styling />
+            <Link id='navLink1' className='navLink' href='/resume'>Resume</Link>
+          </div>
+          
+          {/* <Link id='navLink2' className='navLink' href='/ecommerce'>E-Commerce</Link>
+          <Link id='navLink3' className='navLink' href='/smallbiz'>Small Biz</Link>
+          <Link id='navLink4' className='navLink' href='/backgammon'>Backgammon</Link> */}
         </nav>
         {children}
       </body>

@@ -8,6 +8,7 @@ export default function resume() {
     
       <Link href="/">Link to Home Page</Link>
       <h1>Resume</h1>
+      <Viewer />
       
     </>
   )
