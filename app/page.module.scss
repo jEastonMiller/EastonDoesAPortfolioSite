@@ -1,0 +1,332 @@
+@mixin font($font-family, $font-file) {
+  @font-face {
+    font-family: $font-family;
+    src: url($font-file+'.woff') format('woff');
+    // src: url($font-file+'.eot?#iefix') format('embedded-opentype'),
+    //      url($font-file+'.woff') format('woff'),
+    //      url($font-file+'.ttf') format('truetype'),
+    //      url($font-file+'.svg#'+$font-family) format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+
+@include font('Demode-Negative', '../public/assets/demode-negative-webfont');
+@include font('Demode', '../public/assets/demode-webfont');
+@include font('font-twelve', '../public/assets/fonttwel-webfont');
+@include font('entuista', '../public/assets/entuista_regular-webfont');
+@include font('retro-eighty', '../public/assets/80erfinaldemo-webfont');
+@include font('late-night', '../public/assets/late_night-webfont');
+@include font('mosang', '../public/assets/mosang-black-webfont');
+@include font('orange-juice', '../public/assets/orange_juice_2.0-webfont');
+@include font('bubble-krabby', '../public/assets/bubble_krabby-webfont');
+@include font('wildy', '../public/assets/wildy_sans-webfont');
+
+
+
+$primary: hsla(248, 34%, 26%, 1.0);
+$secondary: hsla(0, 0%, 97%, 1.0);
+$ternary: hsla(3, 80%, 52%, 1.0);
+$quaternary: hsla(4, 82%, 66%, 1.0);
+$extra-small: 600px;
+$small: 600px;
+$medium: 768px;
+$large: 992px;
+$extra-large: 1200px;
+
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  
+  /* background-color: hsla(60, 1%, 76%, 1.0); */
+  /* background-image: url("../public/wn_texture.png"); */
+
+  /* gradient background */
+  /* background: hsla(272, 78%, 16%, 1);
+  background: linear-gradient(90deg, hsla(272, 78%, 16%, 1) 0%, hsla(278, 69%, 17%, 1) 9%, hsla(317, 45%, 23%, 1) 20%, hsla(12, 48%, 46%, 1) 79%, hsla(16, 55%, 51%, 1) 91%, hsla(17, 60%, 52%, 1) 100%);
+  background: -moz-linear-gradient(90deg, hsla(272, 78%, 16%, 1) 0%, hsla(278, 69%, 17%, 1) 9%, hsla(317, 45%, 23%, 1) 20%, hsla(12, 48%, 46%, 1) 79%, hsla(16, 55%, 51%, 1) 91%, hsla(17, 60%, 52%, 1) 100%);
+  background: -webkit-linear-gradient(90deg, hsla(272, 78%, 16%, 1) 0%, hsla(278, 69%, 17%, 1) 9%, hsla(317, 45%, 23%, 1) 20%, hsla(12, 48%, 46%, 1) 79%, hsla(16, 55%, 51%, 1) 91%, hsla(17, 60%, 52%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#2B0948", endColorstr="#320D48", GradientType=1 ); */
+  /* mask-image: url("../public/background_texture.png"); */
+
+  @media screen and (max-width: $extra-small) {
+    font-size: 4px;
+
+    .nodeVisualizer {
+      width: 90vw;
+      height: 120vw;
+      border: $quaternary 0.25em solid;
+      border-style: dotted;
+      border-radius: 3em;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 10% 10% 20% 60%;
+      padding: 2em;
+      gap: 0.5em;
+    }
+    
+    .title {
+      grid-row: 1;
+      grid-column-start: 1;
+      grid-column-end: span-;
+    }
+    
+    .blurb {
+      grid-row: 2;
+      grid-column-start: 1;
+      grid-column-end: span-;
+    }
+    
+    .controlBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      grid-column-start: 1;
+      grid-column-end: span-;
+    }
+    
+    .action {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    .category {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    .action button {
+      width: auto;
+      height: 100%;
+      font-size: 2em; 
+      padding: 3vw;
+      margin: 0 4vw;
+      background: $primary;
+      color: $secondary;
+      border-radius: 6%;
+      border: none;
+      font-family: font-twelve;
+      word-spacing: -0.30em;
+    }
+    
+    .category button {
+      font-size: 1.25em;
+      height: 1.5em;
+      margin: 0 4vw;
+
+    }
+
+    .playground {
+      border: $primary 0.25em dotted;
+      grid-row: 4;
+      grid-column-start: 1;
+      grid-column-end: span-;
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: $small) {
+    font-size: 5px;
+  }
+  @media screen and (min-width: $medium) {
+    font-size: 8px;
+  }
+  @media screen and (min-width: $large) {
+    font-size: 12px;
+  }
+  @media screen and (min-width: $extra-large) {
+    font-size: 19px;
+  }
+  
+}
+
+.main:after {
+  animation: grain 175ms steps(10) infinite;
+  /* content is required when using :after */
+  content: "";
+  /* The grainy image */
+  background-image: url("../public/wn_texture.png");
+  /* Specify a height and width above and beyond the page header for movement */
+  height: 130%;
+  width: 130%;
+  opacity: .15;
+  top: -10%;
+  left: -10%;
+  position: fixed;
+  z-index: -1;
+}
+
+.pageBackground{
+  height: 100vh;
+  position: fixed;
+  background-color: hsla(60, 1%, 76%, 1.0);
+  overflow: hidden;
+  
+}
+
+.nodeVisualizer {
+  width: 90vw;
+  height: 50vw;
+  border: $quaternary 0.25em solid;
+  border-style: dotted;
+  border-radius: 3em;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 10% 10% 80%;
+  padding: 2em;
+  gap: 0.5em;
+}
+
+.title {
+  grid-row: 1;
+  grid-column-start: 1;
+  grid-column-end: span-;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  font-family: bubble-krabby;
+  letter-spacing: 0.3em;
+  word-spacing: 1.25em;
+  font-size: 2em;
+
+}
+
+.blurb {
+  grid-column: 1;
+  grid-row: 2;
+  font-family: wildy;
+  font-size: 1.8em;
+  text-align: center;
+  padding: 0.2em 0.2em;
+  
+}
+
+.controlBox {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.action {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.action button {
+  width: 90%;
+  height: auto;
+  font-size: 2em; 
+  padding: 10%;
+  background: $primary;
+  color: $secondary;
+  border-radius: 6%;
+  border: none;
+  font-family: font-twelve;
+  word-spacing: -0.30em;
+}
+
+.action button:hover {
+  color: $ternary;
+}
+
+.category {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 2.5em;
+  font-family: font-twelve;
+}
+
+.category button {
+  border: none;
+  background: none;
+  color: $secondary;
+  font-size: 1.25em;
+  font-family: font-twelve;
+}
+
+.category button:hover {
+  color: $ternary;
+}
+
+.playground {
+  // border: $primary 0.25em dotted;
+  height: 100%;
+  width: auto;
+  grid-column-start: -2;
+  grid-row: span 2/4;
+  // overflow: hidden;
+  position: relative;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  translate: 50 50;
+  
+}
+
+
+.nodeContainer {
+  position: relative;
+  left: 10px;
+  top: 20px;
+}
+
+
+
+.testParent {
+  height:100px;
+  width: 100px;
+  /* border: 1px solid black; */
+}
+
+@media (prefers-color-scheme: dark) {
+  .vercelLogo {
+    filter: invert(1);
+  }
+
+  .logo,
+  .thirteen img {
+    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes grain {
+  0%, 100% { transform:translate(0, 0) }
+  10% { transform:translate(-2%, -2%) }
+  20% { transform:translate(-5%, 4%) }
+  30% { transform:translate(2%, -1%) }
+  40% { transform:translate(-4%, 2%) }
+  50% { transform:translate(-5%, 1%) }
+  60% { transform:translate(4%, 4%) }
+  70% { transform:translate(3%, 1%) }
+  80% { transform:translate(2%, 4%) }
+  90% { transform:translate(-3%, 1%) }
+}
+
