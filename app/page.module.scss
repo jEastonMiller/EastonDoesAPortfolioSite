@@ -144,18 +144,15 @@ $extra-large: 1200px;
     font-size: 12px;
   }
   @media screen and (min-width: $extra-large) {
-    font-size: 19px;
+    font-size: 15px;
   }
   
 }
 
 .main:after {
   animation: grain 175ms steps(10) infinite;
-  /* content is required when using :after */
   content: "";
-  /* The grainy image */
   background-image: url("../public/wn_texture.png");
-  /* Specify a height and width above and beyond the page header for movement */
   height: 130%;
   width: 130%;
   opacity: .15;
@@ -176,8 +173,9 @@ $extra-large: 1200px;
 .nodeVisualizer {
   width: 90vw;
   height: 50vw;
-  border: $quaternary 0.25em solid;
-  border-style: dotted;
+  // border: $quaternary 0.25em solid;
+  border: 1.2em outset $quaternary;
+  // border-style: dotted;
   border-radius: 3em;
   display: grid;
   grid-template-columns: 40% 60%;
@@ -196,7 +194,7 @@ $extra-large: 1200px;
   align-items: center;
   width: 100%;
 
-  font-family: bubble-krabby;
+  font-family: wildy;
   letter-spacing: 0.3em;
   word-spacing: 1.25em;
   font-size: 2em;
@@ -241,6 +239,15 @@ $extra-large: 1200px;
   word-spacing: -0.30em;
 }
 
+.action button:disabled {
+  opacity: 0.7;
+
+}
+
+.action button:disabled:hover {
+  color: $secondary;
+}
+
 .action button:hover {
   color: $ternary;
 }
@@ -273,13 +280,9 @@ $extra-large: 1200px;
   width: auto;
   grid-column-start: -2;
   grid-row: span 2/4;
-  // overflow: hidden;
   position: relative;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   translate: 50 50;
-  
+  overflow: hidden;
 }
 
 
@@ -287,14 +290,6 @@ $extra-large: 1200px;
   position: relative;
   left: 10px;
   top: 20px;
-}
-
-
-
-.testParent {
-  height:100px;
-  width: 100px;
-  /* border: 1px solid black; */
 }
 
 @media (prefers-color-scheme: dark) {

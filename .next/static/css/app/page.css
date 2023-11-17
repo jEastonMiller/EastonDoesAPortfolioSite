@@ -166,17 +166,14 @@
 }
 @media screen and (min-width: 1200px) {
   .page_main__ux7yf {
-    font-size: 19px;
+    font-size: 15px;
   }
 }
 
 .page_main__ux7yf:after {
   animation: page_grain__0I6SO 175ms steps(10) infinite;
-  /* content is required when using :after */
   content: "";
-  /* The grainy image */
   background-image: url(/_next/static/media/wn_texture.9f84fc0a.png);
-  /* Specify a height and width above and beyond the page header for movement */
   height: 130%;
   width: 130%;
   opacity: 0.15;
@@ -196,8 +193,7 @@
 .page_nodeVisualizer__MGyv8 {
   width: 90vw;
   height: 50vw;
-  border: hsl(4, 82%, 66%) 0.25em solid;
-  border-style: dotted;
+  border: 1.2em outset hsl(4, 82%, 66%);
   border-radius: 3em;
   display: grid;
   grid-template-columns: 40% 60%;
@@ -215,7 +211,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  font-family: bubble-krabby;
+  font-family: wildy;
   letter-spacing: 0.3em;
   word-spacing: 1.25em;
   font-size: 2em;
@@ -258,6 +254,14 @@
   word-spacing: -0.3em;
 }
 
+.page_action__cOf_C button:disabled {
+  opacity: 0.7;
+}
+
+.page_action__cOf_C button:disabled:hover {
+  color: hsl(0, 0%, 97%);
+}
+
 .page_action__cOf_C button:hover {
   color: hsl(3, 80%, 52%);
 }
@@ -291,18 +295,13 @@
   grid-row: span 2/4;
   position: relative;
   translate: 50 50;
+  overflow: hidden;
 }
 
 .page_nodeContainer__kRvHJ {
   position: relative;
   left: 10px;
   top: 20px;
-}
-
-.page_testParent__yiDXT {
-  height: 100px;
-  width: 100px;
-  /* border: 1px solid black; */
 }
 
 @media (prefers-color-scheme: dark) {
