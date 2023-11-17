@@ -7,24 +7,55 @@ import { useState, useEffect } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Blob({ color, size, growth, edges, paths, opacity, floatList, sort, colorSortList }) {
+export default function Blob(
+  { 
+    color, 
+    size, 
+    paths, 
+    opacity, 
+    floatList, 
+    sort, 
+    colorSortList,
+    gridColumn,
+    gridRow,
+    sizeMod,
+   }) {
   const [path, setPath] = useState(null);
   const [position, setPosition] = useState(null);
-  const [degree, setDegree] = useState(Math.floor(Math.random() * 12) + 1);
+  const [positionAtt, setPositionAtt] = useState('absolute');
+  const [llToggle, setLLToggle] = useState(true);
   
 
   const  handlePathMorph= function() {
-    // const pathCache = JSON.parse(JSON.stringify(paths))
-    // const pathIndex = pathCache.indexOf(path);
-    setPath(paths[1]);
-    setPosition(floatList[1]);
+    setTimeout(() => {
+      setPath(paths[1]);
+      setPosition(floatList[1]);
+    }, 0)
+  };
 
+  const handleLLToggle = () => {
+    setLLToggle(!llToggle)
   }
 
   useEffect(() => {
-    if(sort === 'color') setPosition(colorSortList[0]);
-    console.log('sort: ', sort)
-  }, [])
+    if(sort === 'color') {
+      setPosition(colorSortList[0])
+      setPositionAtt('Absolute')
+    };
+    if(sort === 'bst') {
+      setPosition({top: 0, left: 0})
+      setPositionAtt('')
+    }
+    if(sort === null) {
+      setPosition(paths[0]);
+      setPositionAtt('Absolute');
+    }
+    if(sort === 'll') {
+      setPosition({top: 0, left: 0})
+      setPositionAtt('')
+      // positionList = [{top: 0, left: 0}]
+    }
+  }, [sort])
 
   useEffect(() => {
     const morphPath = setTimeout(() => {
@@ -37,27 +68,28 @@ export default function Blob({ color, size, growth, edges, paths, opacity, float
     let positionList;
     if (sort === null) positionList = floatList;
     if (sort === 'color') positionList = colorSortList;
+    if (sort === 'bst' || sort === 'll') {
+      
+      positionList = [{top: 0, left: 0}]
+      return;
+    }
 
-    
     const morphPosition = setTimeout(() => {
       const positionIndex = positionList.indexOf(position);
       positionIndex + 1 === positionList.length ? setPosition(positionList[0]) : setPosition(positionList[positionIndex + 1]);
-
     }, Math.floor(Math.random() * 500) + 3000)
 
   }, [position])
 
-  // useEffect(() => {
-  //   const morphDegree = setTimeout(() => {
-  //     Math.random() > 0.5 ? setDegree(-Math.floor(Math.random() * 50) + 1) : setDegree(Math.floor(Math.random() * 12) + 1);
-  //   }, 200)
-  // }, [degree])
-
   useEffect(() => {
-    console.log('floatList: ', floatList);
     setPath(paths[0]);
-    setPosition(floatList[0]);
+    if(sort !== 'll') setPosition(floatList[0]);
+    if (sort === 'll') {
+      setPosition({top: 0, left: 0})
+      setPositionAtt('')
+    }
     handlePathMorph();
+
   }, [])
 
   if (path) {
@@ -66,15 +98,14 @@ export default function Blob({ color, size, growth, edges, paths, opacity, float
       className={styles.nodeContainer}
       style={
         {
-          height: `calc(${size} / 13 * 1em)`,
-          width: `calc(${size} / 13 * 1em)`,
-          // height: '13em',
-          // width: '13em',
-          position: 'absolute',
+          height: `calc((${size} / 13 * 1em) * ${sizeMod})`,
+          width: `calc((${size} / 13 * 1em) * ${sizeMod})`,
+          gridColumn: gridColumn,
+          gridRow: gridRow,
+          position: positionAtt,
           top: position.top,
           left: position.left,
           opacity: opacity,
-          transform: `rotate(${degree}deg) translate(0 0)`,
           transition: '8s'
         }
       }

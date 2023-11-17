@@ -13,10 +13,10 @@ export default function RootLayout({ children }) {
       <head />
       <body>
         <nav className='mainNav'>
-          <div className='navLink'>
+          {/* <div className='navLink'>
             <Styling />
             <Link id='navLink1' className='navLink' href='/resume'>Resume</Link>
-          </div>
+          </div> */}
           
           {/* <Link id='navLink2' className='navLink' href='/ecommerce'>E-Commerce</Link>
           <Link id='navLink3' className='navLink' href='/smallbiz'>Small Biz</Link>

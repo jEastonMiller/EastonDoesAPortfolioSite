@@ -40,6 +40,14 @@
         "async": false
       }
     },
+    "(app-client)/./node_modules/next/dist/client/link.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
     "(app-client)/./node_modules/next/dist/client/image-component.js": {
       "*": {
         "id": "(sc_client)/./node_modules/next/dist/client/image-component.js",
@@ -48,9 +56,9 @@
         "async": false
       }
     },
-    "(app-client)/./node_modules/next/dist/client/link.js": {
+    "(app-client)/./app/components/styling.jsx": {
       "*": {
-        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
+        "id": "(sc_client)/./app/components/styling.jsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -88,14 +96,6 @@
         "async": false
       }
     },
-    "(app-client)/./app/components/nodeVisualizer.jsx": {
-      "*": {
-        "id": "(sc_client)/./app/components/nodeVisualizer.jsx",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
     "(app-client)/./app/page.module.scss": {
       "*": {
         "id": "(sc_client)/./app/page.module.scss",
@@ -104,9 +104,9 @@
         "async": false
       }
     },
-    "(app-client)/./app/components/styling.jsx": {
+    "(app-client)/./app/components/nodeVisualizer.jsx": {
       "*": {
-        "id": "(sc_client)/./app/components/styling.jsx",
+        "id": "(sc_client)/./app/components/nodeVisualizer.jsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -195,11 +195,27 @@
       ],
       "async": false
     },
+    "/Users/easton/Projects/EastonDoesAPortfolioSite/node_modules/next/dist/client/link.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/Users/easton/Projects/EastonDoesAPortfolioSite/node_modules/next/dist/esm/client/link.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
     "/Users/easton/Projects/EastonDoesAPortfolioSite/node_modules/next/dist/client/image-component.js": {
       "id": "(app-client)/./node_modules/next/dist/client/image-component.js",
       "name": "*",
       "chunks": [
-        "app/layout:static/chunks/app/layout.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -207,20 +223,20 @@
       "id": "(app-client)/./node_modules/next/dist/client/image-component.js",
       "name": "*",
       "chunks": [
-        "app/layout:static/chunks/app/layout.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
-    "/Users/easton/Projects/EastonDoesAPortfolioSite/node_modules/next/dist/client/link.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/components/styling.jsx": {
+      "id": "(app-client)/./app/components/styling.jsx",
       "name": "*",
       "chunks": [
         "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
     },
-    "/Users/easton/Projects/EastonDoesAPortfolioSite/node_modules/next/dist/esm/client/link.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/globals.css": {
+      "id": "(app-client)/./app/globals.css",
       "name": "*",
       "chunks": [
         "app/layout:static/chunks/app/layout.js"
@@ -267,14 +283,6 @@
       ],
       "async": false
     },
-    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/components/nodeVisualizer.jsx": {
-      "id": "(app-client)/./app/components/nodeVisualizer.jsx",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
     "/Users/easton/Projects/EastonDoesAPortfolioSite/app/page.module.scss": {
       "id": "(app-client)/./app/page.module.scss",
       "name": "*",
@@ -283,30 +291,22 @@
       ],
       "async": false
     },
-    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/components/styling.jsx": {
-      "id": "(app-client)/./app/components/styling.jsx",
+    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/components/nodeVisualizer.jsx": {
+      "id": "(app-client)/./app/components/nodeVisualizer.jsx",
       "name": "*",
       "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/globals.css": {
-      "id": "(app-client)/./app/globals.css",
-      "name": "*",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     }
   },
   "entryCSSFiles": {
-    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/page": [
-      "static/css/app/page.css"
-    ],
     "/Users/easton/Projects/EastonDoesAPortfolioSite/app/layout": [
       "static/css/app/layout.css"
     ],
-    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/loading": []
+    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/loading": [],
+    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/page": [
+      "static/css/app/page.css"
+    ]
   }
 }

@@ -39,8 +39,13 @@ export default function Node({ type }) {
   }, [])
 
   return (
-    <div 
-      className={styles.node}>
+    <div   
+      style={{
+        border: "1px solid black",
+      }}
+      className={styles.node}
+    >
+      
       <svg 
         className={styles.node} 
         viewBox="0 0 100 100"
