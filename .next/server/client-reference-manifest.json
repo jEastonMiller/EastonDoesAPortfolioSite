@@ -56,17 +56,17 @@
         "async": false
       }
     },
-    "(app-client)/./app/components/guide.jsx": {
+    "(app-client)/./app/components/node.jsx": {
       "*": {
-        "id": "(sc_client)/./app/components/guide.jsx",
+        "id": "(sc_client)/./app/components/node.jsx",
         "name": "*",
         "chunks": [],
         "async": false
       }
     },
-    "(app-client)/./app/components/node.jsx": {
+    "(app-client)/./app/components/guide.jsx": {
       "*": {
-        "id": "(sc_client)/./app/components/node.jsx",
+        "id": "(sc_client)/./app/components/guide.jsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -227,8 +227,8 @@
       ],
       "async": false
     },
-    "/Users/easton/Projects/EastonDoesAPortfolioSite/node_modules/@next/font/google/target.css?{\"path\":\"app/page.jsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}": {
-      "id": "(app-client)/./node_modules/@next/font/google/target.css?{\"path\":\"app/page.jsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}",
+    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/components/node.jsx": {
+      "id": "(app-client)/./app/components/node.jsx",
       "name": "*",
       "chunks": [
         "app/page:static/chunks/app/page.js"
@@ -237,14 +237,6 @@
     },
     "/Users/easton/Projects/EastonDoesAPortfolioSite/app/components/guide.jsx": {
       "id": "(app-client)/./app/components/guide.jsx",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/components/node.jsx": {
-      "id": "(app-client)/./app/components/node.jsx",
       "name": "*",
       "chunks": [
         "app/page:static/chunks/app/page.js"
@@ -283,6 +275,14 @@
       ],
       "async": false
     },
+    "/Users/easton/Projects/EastonDoesAPortfolioSite/node_modules/@next/font/google/target.css?{\"path\":\"app/page.jsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}": {
+      "id": "(app-client)/./node_modules/@next/font/google/target.css?{\"path\":\"app/page.jsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
     "/Users/easton/Projects/EastonDoesAPortfolioSite/app/components/styling.jsx": {
       "id": "(app-client)/./app/components/styling.jsx",
       "name": "*",
@@ -304,9 +304,9 @@
     "/Users/easton/Projects/EastonDoesAPortfolioSite/app/page": [
       "static/css/app/page.css"
     ],
-    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/loading": [],
     "/Users/easton/Projects/EastonDoesAPortfolioSite/app/layout": [
       "static/css/app/layout.css"
-    ]
+    ],
+    "/Users/easton/Projects/EastonDoesAPortfolioSite/app/loading": []
   }
 }

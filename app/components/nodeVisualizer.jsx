@@ -369,8 +369,9 @@ export default function NodeVisualizer({ type }) {
           >delete NODE</button>}
           <button
             onClick={() => {
-              if (compliment === null) setCompliment(true)
-              else setCompliment(!compliment)
+              // if (compliment === null) setCompliment(true)
+              // else setCompliment(!compliment)
+              console.log('why thank you!!!')
             }}
           >TELL NODE IT LOOKS pretty</button>
         </div>
