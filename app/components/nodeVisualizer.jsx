@@ -23,10 +23,11 @@ export default function NodeVisualizer({ type }) {
   const [sort, setSort] = useState(null);
   const [sizeCache, setSizeCache] = useState([]);
   const [bstDepth, setBSTDepth] = useState(0);
-  const [gridColumnString, setGridColumnString] = useState('')
-  const [gridRowString, setGridRowString] = useState('')
-  const [display, setDisplay] = useState('')
-  const [sizeMod, setSizeMod] = useState(1.0)
+  const [gridColumnString, setGridColumnString] = useState('');
+  const [gridRowString, setGridRowString] = useState('');
+  const [display, setDisplay] = useState('');
+  const [sizeMod, setSizeMod] = useState(1.0);
+  const [compliment, setCompliment] = useState(null)
 
   // generate balanced bst
   function handleGenerateBalancedBST(arr) {
@@ -49,10 +50,6 @@ export default function NodeVisualizer({ type }) {
     current.data.gridColumn = gridColumnAssignment.value;
     gridColumnAssignment.value += 1;
     handleCoordAssignment(current.right, depth, gridColumnAssignment);
-    console.log('depth: ', depth)
-    console.log('bstDepth: ', bstDepth)
-    console.log('comparison: ', bstDepth < depth / 2)
-    console.log(setBSTDepth)
     let treeHeight = depth / 2;
     setBSTDepth(treeHeight);
   }
@@ -64,7 +61,7 @@ export default function NodeVisualizer({ type }) {
 
     if(sort === 'bst') {
       if (numColumns <= 10)setSizeMod(numColumns / 25);
-      else if (bstDepth > 10 && bstDepth <= 13)setSizeMod(numColumns / 35);
+      else if (bstDepth > 10 && bstDepth <= 13)setSizeMod(numColumns / 50);
       else setSizeMod(numColumns/60)
     }
     let colStr = `auto repeat(${(numColumns - 1) / 2}, ${(numColumns - 1) / 2}% auto)`;
@@ -251,7 +248,7 @@ export default function NodeVisualizer({ type }) {
     const sizeCacheInit = [];
 
     // generate nodes 
-    for (let i = 0; i < 13; i++) {
+    for (let i = 0; i < 14; i++) {
       let newNode = handleCreateNode(sizeCacheInit);
       nodeList.push(newNode);
 
@@ -287,14 +284,12 @@ export default function NodeVisualizer({ type }) {
     setNodes(nodeList);
 
     handleGridStyling();
-    console.log('gridRowString: ', gridRowString);
-    console.log('gridColumnString: ', gridColumnString)
   }, [])
 
 
   useEffect(() => {
     handleGridStyling()
-  }, [nodes, sizeMod, bstDepth, display])
+  }, [nodes, display])
 
   useEffect(() => {
     switch (sort) {
@@ -307,6 +302,9 @@ export default function NodeVisualizer({ type }) {
         break;
       case 'll':
         setDisplay('flex');
+        if (nodes.length < 5) setSizeMod( 6 / nodes.length)
+        else if (nodes.length < 10) setSizeMod( 8 / nodes.length)
+        else setSizeMod( 10 / nodes.length)
         break;
       case 'color':
         setDisplay('');
@@ -314,6 +312,9 @@ export default function NodeVisualizer({ type }) {
         break;
       case 'size':
         setDisplay('flex');
+        if (nodes.length < 5) setSizeMod( 6 / nodes.length)
+        else if (nodes.length < 10) setSizeMod( 8 / nodes.length)
+        else setSizeMod( 10 / nodes.length)
         break;
       default:
         break;
@@ -343,6 +344,11 @@ export default function NodeVisualizer({ type }) {
           {nodes.length < 40 ? <button
             onClick={() => {
               handleAddNode()
+              if (sort === 'll' || sort === 'size') {
+                if (nodes.length < 5) setSizeMod( 6 / nodes.length)
+                else if (nodes.length < 10) setSizeMod( 8 / nodes.length)
+                else setSizeMod( 10 / nodes.length)
+              }
             } }
           >ADD node</button> :
           <button
@@ -351,12 +357,22 @@ export default function NodeVisualizer({ type }) {
           {nodes.length > 0 ? <button
             onClick={() => {
               handleDeleteNode();
+              if (sort === 'll' || sort === 'size') {
+                if (nodes.length < 5) setSizeMod( 6 / nodes.length)
+                else if (nodes.length < 10) setSizeMod( 8 / nodes.length)
+                else setSizeMod( 10 / nodes.length)
+              }
             }}
           >delete NODE</button> :
           <button
             disabled
           >delete NODE</button>}
-          <button>TELL NODE IT LOOKS pretty</button>
+          <button
+            onClick={() => {
+              if (compliment === null) setCompliment(true)
+              else setCompliment(!compliment)
+            }}
+          >TELL NODE IT LOOKS pretty</button>
         </div>
         <div
           className={styles.category}
@@ -376,7 +392,7 @@ export default function NodeVisualizer({ type }) {
           <button
             onClick={() => {
               setSort('ll');
-              setSizeMod(nodes.length / 100)
+              setSizeMod( 10 / nodes.length)
             }}
           >LINKED LIST</button>
           <button
@@ -385,7 +401,12 @@ export default function NodeVisualizer({ type }) {
 
             }}
           >COLOR</button>
-          <button>SIZE</button>
+          <button
+            onClick={() => {
+              setSort('size');
+              setSizeMod( 10 / nodes.length)
+            }}
+          >SIZE</button>
         </div>
       </div>
 
@@ -398,7 +419,6 @@ export default function NodeVisualizer({ type }) {
             gridTemplateRows: gridRowString,
             flexWrap: 'wrap',
             overflow: 'none'
-
           }
         }
       >
@@ -414,63 +434,14 @@ export default function NodeVisualizer({ type }) {
         gridColumn={element.gridColumn}
         gridRow={element.gridRow}
         sizeMod={sizeMod}
+        llOrder={element.llOrder}
+        sizeOrder={element.sizeOrder}
+        compliment={compliment}
         key={index}
         />
         ))}
         
       </div>
-      {/* {sort === null && 
-        <div
-          className={styles.playground}
-        >
-          {nodes.map((element, index) => (
-          <Blob 
-            color={element.color} 
-            size={element.size} 
-            growth={element.growth}
-            edges={element.edges} 
-            paths={element.paths}
-            floatList={element.floatList}
-            opacity={element.opacity}
-            sort={sort}
-            colorSortList={element.colorSortList}
-            key={index}
-          />
-          ))}
-        </div> 
-      }
-      {sort === 'bst' && 
-        <div
-          className={styles.playground}
-          style={
-            {
-              display: 'grid',
-              gridTemplateColumns: gridColumnString,
-              gridTemplateRows: gridRowString
-            }
-          }
-        >
-          {nodes.map((element, index) => (
-          <Blob 
-            color={element.color} 
-            size={element.size} 
-            growth={element.growth}
-            edges={element.edges} 
-            paths={element.paths}
-            floatList={element.floatList}
-            opacity={element.opacity}
-            sort={sort}
-            colorSortList={element.colorSortList}
-            key={index}
-          />
-          ))}
-        </div>  
-      }
-      {sort === 'll' && 
-      <div>
-
-      </div>  
-      } */}
     </div>
   )
 }

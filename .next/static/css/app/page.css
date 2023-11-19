@@ -80,17 +80,16 @@
 }
 @media screen and (max-width: 600px) {
   .page_main__ux7yf {
-    font-size: 4px;
+    font-size: 1.25vw;
   }
   .page_main__ux7yf .page_nodeVisualizer__MGyv8 {
     width: 90vw;
     height: 120vw;
-    border: hsl(4, 82%, 66%) 0.25em solid;
-    border-style: dotted;
+    border: 1.2em outset hsla(4, 82%, 66%, 0.8);
     border-radius: 3em;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 10% 10% 20% 60%;
+    grid-template-rows: 12.5% 5% 20% 62.5%;
     padding: 2em;
     grid-gap: 0.5em;
     gap: 0.5em;
@@ -104,6 +103,9 @@
     grid-row: 2;
     grid-column-start: 1;
     grid-column-end: span-;
+    font-size: 4em;
+    margin: 0;
+    padding: 0;
   }
   .page_main__ux7yf .page_controlBox__ALMmM {
     display: flex;
@@ -142,7 +144,6 @@
     margin: 0 4vw;
   }
   .page_main__ux7yf .page_playground__LImsI {
-    border: hsl(248, 34%, 26%) 0.25em dotted;
     grid-row: 4;
     grid-column-start: 1;
     grid-column-end: span-;
@@ -151,12 +152,12 @@
 }
 @media screen and (min-width: 600px) {
   .page_main__ux7yf {
-    font-size: 5px;
+    font-size: 8px;
   }
 }
 @media screen and (min-width: 768px) {
   .page_main__ux7yf {
-    font-size: 8px;
+    font-size: 10px;
   }
 }
 @media screen and (min-width: 992px) {
@@ -193,7 +194,7 @@
 .page_nodeVisualizer__MGyv8 {
   width: 90vw;
   height: 50vw;
-  border: 1.2em outset hsl(4, 82%, 66%);
+  border: 1.2em outset hsla(4, 82%, 66%, 0.8);
   border-radius: 3em;
   display: grid;
   grid-template-columns: 40% 60%;
@@ -282,6 +283,13 @@
   color: hsl(0, 0%, 97%);
   font-size: 1.25em;
   font-family: font-twelve;
+}
+
+.page_nodeLoader__WyzzZ {
+  font-family: bubble-krabby;
+  font-size: 4em;
+  position: absolute;
+  z-index: 1;
 }
 
 .page_category__QH_D7 button:hover {

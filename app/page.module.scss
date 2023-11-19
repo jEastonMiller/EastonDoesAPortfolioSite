@@ -29,6 +29,7 @@ $primary: hsla(248, 34%, 26%, 1.0);
 $secondary: hsla(0, 0%, 97%, 1.0);
 $ternary: hsla(3, 80%, 52%, 1.0);
 $quaternary: hsla(4, 82%, 66%, 1.0);
+$quaternary-lite: hsla(4, 82%, 66%, 0.8);
 $extra-small: 600px;
 $small: 600px;
 $medium: 768px;
@@ -57,17 +58,16 @@ $extra-large: 1200px;
   /* mask-image: url("../public/background_texture.png"); */
 
   @media screen and (max-width: $extra-small) {
-    font-size: 4px;
+    font-size: 1.25vw;
 
     .nodeVisualizer {
       width: 90vw;
       height: 120vw;
-      border: $quaternary 0.25em solid;
-      border-style: dotted;
+      border: 1.2em outset $quaternary-lite;
       border-radius: 3em;
       display: grid;
       grid-template-columns: 50% 50%;
-      grid-template-rows: 10% 10% 20% 60%;
+      grid-template-rows: 12.5% 5% 20% 62.5%;
       padding: 2em;
       gap: 0.5em;
     }
@@ -82,6 +82,9 @@ $extra-large: 1200px;
       grid-row: 2;
       grid-column-start: 1;
       grid-column-end: span-;
+      font-size: 4em;
+      margin: 0;
+      padding: 0;
     }
     
     .controlBox {
@@ -127,7 +130,6 @@ $extra-large: 1200px;
     }
 
     .playground {
-      border: $primary 0.25em dotted;
       grid-row: 4;
       grid-column-start: 1;
       grid-column-end: span-;
@@ -135,10 +137,10 @@ $extra-large: 1200px;
     }
   }
   @media screen and (min-width: $small) {
-    font-size: 5px;
+    font-size: 8px;
   }
   @media screen and (min-width: $medium) {
-    font-size: 8px;
+    font-size: 10px;
   }
   @media screen and (min-width: $large) {
     font-size: 12px;
@@ -173,9 +175,7 @@ $extra-large: 1200px;
 .nodeVisualizer {
   width: 90vw;
   height: 50vw;
-  // border: $quaternary 0.25em solid;
-  border: 1.2em outset $quaternary;
-  // border-style: dotted;
+  border: 1.2em outset $quaternary-lite;
   border-radius: 3em;
   display: grid;
   grid-template-columns: 40% 60%;
@@ -268,6 +268,14 @@ $extra-large: 1200px;
   color: $secondary;
   font-size: 1.25em;
   font-family: font-twelve;
+}
+
+.nodeLoader {
+  font-family: bubble-krabby;
+  font-size: 4em;
+  position: absolute;
+  z-index: 1;
+  
 }
 
 .category button:hover {
